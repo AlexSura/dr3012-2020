@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> GUSTO
+
+	<meta charset="UTF-8">
+	<title>cegth lhrevthynhcgj yc </title>
+</head>
+<script type="text/javascript">
+
+	function min(a, b) {
+  if (parseInt(a) > parseInt(b)) {
+    return a;
+  } else {
+    return b;
+  }
+}
+        var a = prompt ('A?', '');
+        var b = prompt ('В?', '');
+       
+         alert('Большее число: ' + min(a,b));
+
+         function gip(a,b) {
+         	var g= Math.pow(a,2)+Math.pow(b,2);
+         	g= Math.pow(g,1/2);
+         	return g;
+         	document.write(g)
+         }
+          var a = prompt ('A?катет', '');
+        var b = prompt ('В?катет', '');
+alert('GIP' + gip(a,b));
+//Создать функцию, которая принимает одно число (10). В функции создать цикл, который будет увеличивать число в 10 раз и выводить его на экран. Когда число будет больше 1 000 000, на экране должно появляться сообщение, что вы достигли предела.
+function A3(a){
+	for(a=10;a<1000001;a=a*10){
+		alert(a);
+	}
+		
+}
+
+//Создать функцию, в которой объявляется массив и случайными элементами.
+function dan4(){
+	var arr=["a","b","c","d"];
+
+// Получаем случайный ключ массива
+var rand = Math.floor(Math.random() * arr.length);
+
+alert('dan4  '+ arr[rand]);
+
+}
+dan4();
+//Создать функцию, которая принимает массив и возвращает среднеарифметическое значение массива.
+function dan5(array){
+	 var sum = 0;
+for(var i = 0; i < array.length; i++){
+    sum += array[i];
+    }
+    var i=array.length;
+    var sred=sum/i;
+alert('задание 5  '+sred);
+}
+var arr=[500,70,5,8,6];
+dan5(arr);
+//Создать функцию, которая принимает строку. Вернуть количество слов с строке.
+function dan6(str){
+	var str=str.toString();
+	var a=str.split(" "||",");
+	var b=a.length;
+	alert('задание 6  '+b);
+}
+var  string1=prompt  ('сторка', ' ' );
+dan6(string1);
+//*Написать функцию, которая рассчитывает последовательность чисел Фибоначчи.
+function fib(n) {
+  return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+}
+var y=prompt('fib', '');
+alert( fib(y) );
+
+</script>
+<body>
+	
+</body>
+</html>
