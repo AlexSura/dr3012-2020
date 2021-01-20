@@ -1,0 +1,37 @@
+Найдите номер модели, скорость и размер жесткого диска для всех ПК стоимостью менее 500 дол. Вывести: model, speed и hd
+SELECT model, speed, hd FROM PC 
+where price < 500
+Найдите производителей принтеров. Вывести: maker
+Select DISTINCT maker FROM Product
+WHERE type ='Printer'
+Задание: 5 (Serge I: 2002-09-30)
+Найдите номер модели, скорость и размер жесткого диска ПК, имеющих 12x или 24x CD и цену менее 600 дол.
+SELECT model, speed, hd
+FROM PC
+WHERE (cd = '24x' OR  cd = '12x') AND 
+price < 600
+Для каждого производителя, выпускающего ПК-блокноты c объёмом жесткого диска не менее 10 Гбайт, найти скорости таких ПК-блокнотов. Вывод: производитель, скорость.
+SELECT DISTINCT Maker, speed
+FROM Product INNER JOIN
+Laptop ON Laptop.model=Product.model
+WHERE (type='Laptop') and
+hd = 10 or hd>10 and type = 'Laptop'
+Задание: 7 (Serge I: 2002-11-02)
+Найдите номера моделей и цены всех имеющихся в продаже продуктов (любого типа) производителя B (латинская буква).
+SELECT DISTINCT product.model, pc.price
+FROM Product JOIN pc ON product.model = pc.model WHERE maker = 'B'
+UNION
+SELECT DISTINCT product.model, laptop.price
+FROM product JOIN laptop ON product.model=laptop.model WHERE maker='B'
+UNION
+SELECT DISTINCT product.model, printer.price
+FROM product JOIN printer ON product.model=printer.model WHERE maker='B'
+Задание: 8 (Serge I: 2003-02-03)
+Найдите производителя, выпускающего ПК, но не ПК-блокноты.
+SELECT maker
+FROM product
+where product.type='PC' 
+EXCEPT
+SELECT maker
+FROM product
+where product.type='Laptop'
